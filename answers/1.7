@@ -1,1 +1,2 @@
-docker image prune -a --force
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
