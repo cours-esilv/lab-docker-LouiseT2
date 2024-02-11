@@ -2,3 +2,13 @@ version: '3'
 services:
   my-service:
     image: my_flask_app
+    ports:
+      - "5000:5000"
+    environment:
+      - ENV_VAR_NAME=production
+my-frontend:
+    image: your-frontend-image
+    ports:
+      - "80:80"
+    environment:
+      - BACKEND_URL=http://my-service:5000
